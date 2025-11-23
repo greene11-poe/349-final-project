@@ -59,9 +59,9 @@ const Cart = () => {
 
       <div className="cart-summary">
         <h3>Total: ${getTotal()}</h3>
-        <Link to="/payment" className="btn checkout-btn">
+        {/* <Link to="/payment" className="btn checkout-btn">
           Go to Payment
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

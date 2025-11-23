@@ -1,53 +1,61 @@
 import { useEffect, useState, useContext } from "react";
 import "./ProductDetail.css";
 import { useParams } from "react-router-dom";
+import { steamGames } from "../../data/steamGamesData";
 import { CartContext } from "../../context/CartContext";
 
-
 const ProductDetail = () => {
-  const {addToCart} = useContext(CartContext)
-
-  const API_KEY = "4ac96a0630f3248e38c0bf5f236cd3c4";
-  const BASE_URL = "https://api.themoviedb.org/3";
-  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-
+  const {addToCart} = useContext(CartContext)  
   const { id } = useParams();
-  const [movie, setMovie] = useState(null);
+  const [game, setGame] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
-      .then((response) => response.json())
-      .then((data) => setMovie(data));
+    const gameId = parseInt(id);
+    const selectedGame = steamGames.find(g => g.id === gameId);
+    
+    const timer = setTimeout(() => {
+        setGame(selectedGame);
+    }, 500); // 500ms delay
+
+    return () => clearTimeout(timer);
+    
   }, [id]);
 
-  if (!movie) {
+  if (!game) {
     return <p>Loading...</p>;
   }
 
+  const displayPrice = game.price === 0.0 ? "Free To Play" : `$${game.price.toFixed(2)}`;
+  
   const handleAddToCart = () =>{
     addToCart({
-      id: movie.id,
-      title: movie.title,
-      price: movie.vote_average.toFixed(1),
-      image: movie.poster_path
-        ? IMAGE_BASE_URL + movie.poster_path
-        : "https://via.placeholder.com/500x750?text=No+Image",
+      id: game.id,
+      title: game.title,
+      price: game.price.toFixed(2), 
+      image: game.image,
     });
   }
+  
   return (
     <div className="product-detail">
       <div className="product-detail__image">
         <img
-          src={movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : ""
-          }
-          alt={movie.title}
+          src={game.image}
+          alt={game.title}
         />
       </div>
       <div className="product-detail__info">
-        <h2>{movie.title}</h2>
-        <p className="description">{movie.overview}</p>
-        <p className="price">${movie?.vote_average?.toFixed(1)}</p>
-        <button className="btn add-btn" onClick={handleAddToCart}>Add to Cart</button>
+        <h2>{game.title}</h2>
+        <p className="description">{game.description}</p>
+
+        <p><strong>Rating:</strong> {game.rating}</p>
+        <p><strong>Release Date:</strong> {game.release_date}</p>
+        <p><strong>Developer:</strong> {game.developer}</p>
+        <p><strong>Publisher:</strong> {game.publisher}</p>
+        <p><strong>Tags:</strong> {game.tags.join(', ')}</p>
+
+        <p className="price">Price: {displayPrice}</p>
+        <button className="btn add-btn" onClick={handleAddToCart}>Add to Wishlist</button>
       </div>
     </div>
   );

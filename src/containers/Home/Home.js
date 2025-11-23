@@ -1,34 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import { steamGames } from "../../data/steamGamesData";
 import "./Home.css";
 
 const Home = () => {
-  const API_KEY = "4ac96a0630f3248e38c0bf5f236cd3c4";
-  const BASE_URL = "https://api.themoviedb.org/3";
-
-  const [movies, setMovies] = useState([]);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&page=1`);
-        const data = await response.json();
-        setMovies(data.results || []);
-      } catch (error) {
-        console.error("Error fetching games:", error);
-      }
-    };
-    fetchMovies();
-  },[]);
+    const timer = setTimeout(() => {
+      setGames(steamGames);
+    }, 500); // 500ms delay
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="home">
       <h2>Popular Games</h2>
       <div className="product-list">
-        {movies.length === 0 ? (
+        {games.length === 0 ? (
           <p>Loading...</p>
         ) : (
-          movies.map((movie) => <ProductCard key={movie.id} movie={movie} />)
+          games.map((game) => <ProductCard key={game.id} item={game} isHome={true} />)
         )}
       </div>
     </div>
