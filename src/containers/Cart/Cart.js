@@ -19,7 +19,7 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       <div className="cart empty">
-        <h2>Your wishlist is Empty</h2>
+        <h2>Your wishlist is empty</h2>
         <Link to="/" className="btn back-btn">
           Look for games
         </Link>
