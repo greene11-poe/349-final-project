@@ -28,6 +28,24 @@
   border-radius: 6px;
 }
 
+body.dark-mode .product-card {
+  background-color: #272727;
+  border: 1px solid #404040;
+}
+
+body.dark-mode .product-image {
+  background: #1f1f1f;
+}
+
+body.dark-mode .product-card h3,
+body.dark-mode .product-card p {
+  color: #fff;
+}
+
+body.dark-mode .product-card .rating {
+  color: #28a745; /* keep price text green */
+}
+
 .product-image img {
   width: 460px;
   height: 215px;
@@ -58,6 +76,10 @@
   text-overflow: ellipsis;
 }
 
+body.dark-mode .product-card h3 {
+  color: #fff;
+}
+
 .rating {
   font-weight: bold;
   color: #28a745;
@@ -68,7 +90,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: flex-start; /* prevents stretching */
+  align-items: flex-start;
 }
 .btn {
   display: inline-block;

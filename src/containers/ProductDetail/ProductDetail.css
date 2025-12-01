@@ -76,6 +76,23 @@
   margin-bottom: 0.5rem;
 }
 
+body.dark-mode .product-detail__description h2 {
+  color: #fff;
+}
+
+body.dark-mode .product-detail {
+  color: #fff;
+}
+
+body.dark-mode .product-detail .price {
+  color: #28a745;
+}
+
+body.dark-mode .product-detail__meta p,
+body.dark-mode .product-detail__meta strong {
+  color: #fff;
+}
+
 .price {
   font-size: 1.2rem;
   font-weight: bold;
