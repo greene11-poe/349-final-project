@@ -61,6 +61,7 @@ const ProductDetail = () => {
         <button className="btn add-btn" onClick={handleAddToCart}>Add to Wishlist</button>
         </div>
 
+        {/* charts on the right column (same line as description) */}
         <div className="product-detail__chart-side">
           {game.charts && Array.isArray(game.charts) && game.charts.length > 0 ? (
             <div className="product-detail__chart product-detail__chart-grid">
