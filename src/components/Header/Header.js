@@ -37,7 +37,7 @@ const Header = () => {
         </button>
         <Link to="/">Home</Link>
         <div className="cart-link">
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Wishlist</Link>
           {cartCount>0 && (<span className="cart-badge">{cartCount}</span>)}
         </div>
 
