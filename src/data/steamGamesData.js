@@ -1,3 +1,5 @@
+import { getChartPath } from '../utils/chartPaths';
+
 export const steamGames = [
   {
     id: 1,
@@ -10,7 +12,7 @@ export const steamGames = [
     developer: "Valve",
     publisher: "Valve",
     tags: ["FPS", "Shooter", "Multiplayer"],
-    charts: ["/charts/counter-strike-2_avg_players.png"]
+    charts: [getChartPath('counter-strike-2-avg-players.png')]
   },
   {
     id: 2,
@@ -23,7 +25,7 @@ export const steamGames = [
     developer: "Valve",
     publisher: "Valve",
     tags: ["Free to Play", "MOBA", "Multiplayer"],
-    charts: ["/charts/dota2_avg_players.png"]
+    charts: [getChartPath('dota2-avg-players.png')]
   },
   {
     id: 3,
@@ -36,8 +38,8 @@ export const steamGames = [
     developer: "Embark Studios",
     publisher: "Embark Studios",
     tags: ["Extraction Shooter", "PvP", "Multiplayer"],
-    charts: ["/charts/arc-raiders_avg_players.png"],
-    priceCharts: ["/charts/arc-raiders_price_history.png"]
+    charts: [getChartPath('arc-raiders-avg-players.png')],
+    priceCharts: [getChartPath('arc-raiders-price-history.png')]
   },
   {
     id: 4,
@@ -50,8 +52,8 @@ export const steamGames = [
     developer: "Battlefield Studios",
     publisher: "Electronic Arts",
     tags: ["FPS", "Multiplayer", "Action"],
-    charts: ["/charts/battlefield6_avg_players.png"],
-    priceCharts: ["/charts/battlefield6_price_history.png"]
+    charts: [getChartPath('battlefield6-avg-players.png')],
+    priceCharts: [getChartPath('battlefield6-price-history.png')]
   },
   {
     id: 5,
@@ -64,7 +66,7 @@ export const steamGames = [
     developer: "PUBG Corporation",
     publisher: "KRAFTON. Inc.",
     tags: ["Survival", "Shooter", "Battle Royale"],
-    charts: ["/charts/pubg_avg_players.png"]
+    charts: [getChartPath('pubg-avg-players.png')]
   },
   {
     id: 6,
@@ -77,7 +79,7 @@ export const steamGames = [
     developer: "Everston Studio",
     publisher: "NetEase Games",
     tags: ["Open World", "Multiplayer", "Free to Play"],
-    charts: ["/charts/where-winds-meet_avg_players.png"]
+    charts: [getChartPath('where-winds-meet-avg-players.png')]
   },
   {
     id: 7,
@@ -90,8 +92,8 @@ export const steamGames = [
     developer: "Facepunch Studios",
     publisher: "Facepunch Studios",
     tags: ["Survival", "Crafting", "Multiplayer"],
-    charts: ["/charts/rust_avg_players.png"],
-    priceCharts: ["/charts/rust_price_history.png"]
+    charts: [getChartPath('rust-avg-players.png')],
+    priceCharts: [getChartPath('rust-price-history.png')]
   },
   {
     id: 8,
@@ -104,7 +106,7 @@ export const steamGames = [
     developer: "NetEase Games",
     publisher: "NetEase Games",
     tags: ["Free to Play", "Multiplayer", "Hero Shooter"],
-    charts: ["/charts/marvel-rivals_avg_players.png"]
+    charts: [getChartPath('marvel-rivals-avg-players.png')]
   },
   {
     id: 9,
@@ -117,8 +119,8 @@ export const steamGames = [
     developer: "Rockstar North",
     publisher: "Rockstar Games",
     tags: ["Open World", "Action", "Multiplayer"],
-    charts: ["/charts/gta-v_enhanced_avg_players.png"],
-    priceCharts: ["/charts/gta-v_enhanced_price_history.png"]
+    charts: [getChartPath('gta-v-enhanced-avg-players.png')],
+    priceCharts: [getChartPath('gta-v-enhanced-price-history.png')]
   },
   {
     id: 10,
@@ -131,6 +133,6 @@ export const steamGames = [
     developer: "Treyarch",
     publisher: "Activision",
     tags: ["FPS", "Multiplayer", "Shooter"],
-    charts: ["/charts/call-of-duty_avg_players.png"]
+    charts: [getChartPath('call-of-duty-avg-players.png')]
   },
 ];

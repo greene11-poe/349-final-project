@@ -13,7 +13,7 @@ import { CartProvider } from "./context/CartContext";
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="app-container">
           <Header />
           <main className="main-content">
